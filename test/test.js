@@ -30,14 +30,17 @@ function EmptyFeedTests () {
     var actualResult    = rssFeed.xml();
     var expectedResult  = '<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>http://change/my/site/url</link><generator>Node.js juan-rss</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate></channel></rss>'
 
-    assert.equal(expectedResult, actualResult);
+    assert.equal(actualResult, expectedResult);
   };
 
   function CreateAnEmptyItemTest () {
-    var actualResult      = rssFeed.xml();
-    var expectedResult    = '<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>http://change/my/site/url</link><generator>Node.js juan-rss</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate></channel></rss>';
+    rssFeed.item();
 
-    assert.equal(expectedResult, actualResult);
+    var actualResult    = rssFeed.xml();
+
+    var expectedResult  = '<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>http://change/my/site/url</link><generator>Node.js juan-rss</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate><item><title><![CDATA[No title]]></title><guid isPermaLink="false">No title</guid></item></channel></rss>'
+
+    assert.equal(actualResult, expectedResult);
   };
 };
 
@@ -60,7 +63,7 @@ function FillingFeedTests () {
     var actualResult      = rssFeed.xml();
     var expectedResult    = '<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Title]]></title><description><![CDATA[My Description]]></description><link>http://domain/path/to/</link><image><url>http://domain/path/to/icon.png</url><title>My Title</title><link>http://domain/path/to/</link></image><generator>My Company</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate><atom:link href="http://domain/path/to/rss.xml" rel="self" type="application/rss+xml"/><generator>My Company</generator><anyOtherField>Lorem Ipsum</anyOtherField></channel></rss>';
 
-    assert.equal(expectedResult, actualResult);
+    assert.equal(actualResult, expectedResult);
   };
 
   function CreateAndFillRSSObjectTest () {
@@ -79,6 +82,6 @@ function FillingFeedTests () {
     var actualResult   = otherRSSFeed.xml();
     var expectedResult = '<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Title]]></title><description><![CDATA[My Description]]></description><link>http://domain/path/to/</link><image><url>http://domain/path/to/icon.png</url><title>My Title</title><link>http://domain/path/to/</link></image><generator>My Company</generator><lastBuildDate>' + new Date().toUTCString() +'</lastBuildDate><atom:link href="http://domain/path/to/rss.xml" rel="self" type="application/rss+xml"/><generator>My Company</generator><anyOtherField>Lorem Ipsum</anyOtherField><domain:otherKey>Random Value</domain:otherKey></channel></rss>';
 
-    assert.equal(expectedResult, actualResult);
+    assert.equal(actualResult, expectedResult);
   };
 };

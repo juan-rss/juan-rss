@@ -1,7 +1,7 @@
 juan-rss
 ========
 
-Fork from dylang's node-rss version 0.0.4 refactored to allow more flexibility.
+Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss), refactored to allow more flexibility.
 
 ## Installation
 
@@ -16,7 +16,6 @@ $ npm install juan-rss
 ````javascript
 
 var RSS = require('juan-rss');
-
 ````
 
 ### Create an RSS Feed Object
@@ -26,7 +25,6 @@ var RSS = require('juan-rss');
 ````javascript
 
 var rssFeed = new RSS();
-
 ````
 
 * You can fill the main fields here:
@@ -40,7 +38,6 @@ rssFeed.feed_url      = 'http://domain/path/to/rss.xml';
 rssFeed.site_url      = 'http://domain/path/to/';
 rssFeed.image_url     = 'http://domain/path/to/icon.png';
 rssFeed.author        = 'John Doe';
-
 ````
 
 * You can, of course, create the object and assign the fields inmediately:
@@ -54,15 +51,26 @@ var rssFeed = new RSS({}
   image_url     : 'http://domain/path/to/icon.png',
   author        : 'John Doe'
 });
-
 ````
 
 ### Add Items to the RSS Feed Object
 
+* Create an empty Item, filling it later:
+
 (TODO)
 ````javascript
 
+
 ````
+
+* Or create and fill the item inmediately:
+
+(TODO)
+````javascript
+
+
+````
+
 
 ### Add Attributes to the XML RSS Header
 
@@ -81,16 +89,20 @@ var rssFeed = new RSS({}
 To run the tests use [mocha](https://github.com/visionmedia/mocha).
 
 ````bash
+$ mocha
+````
+
+Personally, I like this reporter better:
+
+````bash
 $ mocha --reporter spec
-
-
 ````
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2012 Herman Junge <haj@neosource.cl>
+Copyright (c) 2012 Herman Junge (<haj@neosource.cl>)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
