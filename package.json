@@ -1,0 +1,19 @@
+
+{ "name"                        : "juan-rss"
+, "version"                     : "0.1.0"
+, "description"                 : "RSS feed generator"
+, "homepage"                    : "http://github.com/hermanjunge/juan-rss"
+, "author"                      : "Herman Junge <haj@neosource.cl>"
+, "repository"                  : {
+    "type"                      : "git"
+  , "url"                       : "http://github.com/hermanjunge/juan-rss"
+  }
+, "bugs"                        : {
+    "mail"                      : "haj@neosource.cl"
+,   "url"                       : "http://github.com/hermanjunge/juan-rss/issues"
+    }
+, "dependencies"                : {
+    "xml"                       : "0.0.7"
+    }
+, "main"                        : "lib/rss.js"
+}
