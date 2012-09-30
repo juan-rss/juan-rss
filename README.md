@@ -55,22 +55,48 @@ var rssFeed = new RSS({}
 
 ### Add Items to the RSS Feed Object
 
-* Create an empty Item, filling it later:
+* Create an empty Item and fill it:
 
-(TODO)
 ````javascript
-
-
+// The object rssFeed being created before ...
+rssFeed.item({
+    title           : 'item 1'
+  , description     : 'description 1'
+  , url             : 'http://domain/path/to/post-1'
+  , date            : 'Sep 30, 2012 04:58:00 GMT'
+});
 ````
 
-* Or create and fill the item inmediately:
+* Several items can be created at once, just chaining the function:
 
-(TODO)
 ````javascript
-
-
+// The object rssFeed being created before ...
+    rssFeed
+    .item({
+        title           : 'item 1'
+      , description     : 'description 1'
+      , url             : 'http://domain/path/to/post-1'
+      , date            : 'Feb 22, 2010 10:45:43 GMT'
+    })
+    .item({
+        title           : 'item 2'
+      , description     : 'description 2'
+      , url             : 'http://domain/path/to/post-2'
+      , date            : 'Jun 04, 2007 14:58:31 GMT'
+    })
+    .item({
+        title           : 'item 3'
+      , description     : 'description 3'
+      , url             : 'http://domain/path/to/post-3'
+      , date            : 'Jun 24, 2011 08:57:19 GMT'
+    })
+    .item({
+        title           : 'item 4'
+      , description     : 'description 4'
+      , url             : 'http://domain/path/to/post-4'
+      , date            : 'Sep 26, 2011 22:40:19 GMT'
+    });
 ````
-
 
 ### Add Attributes to the XML RSS Header
 
