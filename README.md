@@ -1,7 +1,7 @@
 juan-rss
 ========
 
-Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss), refactored to allow more flexibility.
+Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/commit/52011922b678891ef687dfa6a96f96588ed3075c), refactored to allow more flexibility.
 
 ## Installation
 
@@ -98,16 +98,67 @@ rssFeed.item({
     });
 ````
 
+* Now, of course, you may need to include more fields in your RSS items
+
+````javascript
+// The object rssFeed being created before ...
+    rssFeed
+    .item({
+        title                   : 'item 1'
+      , description             : 'description 1'
+      , url                     : 'http://domain/path/to/post-1'
+      , date                    : 'Feb 22, 2010 10:45:43 GMT'
+      , categories              : ['Food', 'Travels', 'Celebrities']
+      , 'myNamespace:myField'   : 'Some Value'
+    })
+    .item({
+        title                   : 'item 2'
+      , description             : 'description 2'
+      , url                     : 'http://domain/path/to/post-2'
+      , date                    : 'Jun 04, 2007 14:58:31 GMT'
+    })
+    .item({
+        title                   : 'item 3'
+      , description             : 'description 3'
+      , url                     : 'http://domain/path/to/post-3'
+      , date                    : 'Jun 24, 2011 08:57:19 GMT'
+      , 'myNamespace:myField'   : 'Other Value'
+    })
+    .item({
+        title                   : 'item 4'
+      , description             : 'description 4'
+      , url                     : 'http://domain/path/to/post-4'
+    });
+````
+
 ### Add Attributes to the XML RSS Header
 
-(TODO)
+* By default, I'm including these XML RSS Headers:
+  * 'xmlns:dc'      : 'http://purl.org/dc/elements/1.1/'
+  * 'xmlns:content' : 'http://purl.org/rss/1.0/modules/content/'
+  * 'xmlns:atom'    : 'http://www.w3.org/2005/Atom'
+
+* Perhaps You want to include more. Use : `xmlAddAttr()` this way:
+
 ````javascript
+// The object rssFeed being created before ...
+rssFeed.xmlAddAttr('myNameSpace:MyField', 'Special Value');
+rssFeed.xmlAddAttr('myNameSpace:OtherField', 'More Specials Values');
+````
+
+* The result:
+
+````xml
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" myNameSpace:MyField="Special Value" myNameSpace:OtherField="More Specials Values" version="2.0"><channel>
 ````
 
 ### Generate XML from the RSS Feed Object
 
-(TODO)
+* To generate your XML:
+
 ````javascript
+// The object rssFeed being created before ...
+rssFeed.xml();
 ````
 
 ## Tests
