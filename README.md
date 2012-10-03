@@ -33,26 +33,26 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 #### You can, of course, create the object and assign the fields inmediately:
 
-  var rssFeed = new RSS({}
-    title         : 'My Title',
-    description   : 'My Description',
-    feed_url      : 'http://domain/path/to/rss.xml',
-    site_url      : 'http://domain/path/to/',
-    image_url     : 'http://domain/path/to/icon.png',
-    author        : 'John Doe'
-  });
+    var rssFeed = new RSS({}
+      title         : 'My Title',
+      description   : 'My Description',
+      feed_url      : 'http://domain/path/to/rss.xml',
+      site_url      : 'http://domain/path/to/',
+      image_url     : 'http://domain/path/to/icon.png',
+      author        : 'John Doe'
+    });
 
 ### Add Items to the RSS Feed Object
 
 #### Create an empty Item and fill it:
 
-  // The object rssFeed being created before ...
-  rssFeed.item({
-      title           : 'item 1'
-    , description     : 'description 1'
-    , url             : 'http://domain/path/to/post-1'
-    , date            : 'Sep 30, 2012 04:58:00 GMT'
-  });
+    // The object rssFeed being created before ...
+    rssFeed.item({
+        title           : 'item 1'
+      , description     : 'description 1'
+      , url             : 'http://domain/path/to/post-1'
+      , date            : 'Sep 30, 2012 04:58:00 GMT'
+    });
 
 #### Several items can be created at once, just chaining the function:
 
