@@ -136,8 +136,8 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 #### To generate your XML:
 
-  // The object rssFeed being created before ...
-  rssFeed.xml();
+    // The object rssFeed being created before ...
+    rssFeed.xml();
 
 ## Tests
 
