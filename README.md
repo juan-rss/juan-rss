@@ -31,7 +31,7 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
     rssFeed.image_url     = 'http://domain/path/to/icon.png';
     rssFeed.author        = 'John Doe';
 
-* You can, of course, create the object and assign the fields inmediately:
+#### You can, of course, create the object and assign the fields inmediately:
 
   var rssFeed = new RSS({}
     title         : 'My Title',
@@ -44,7 +44,7 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 ### Add Items to the RSS Feed Object
 
-* Create an empty Item and fill it:
+#### Create an empty Item and fill it:
 
   // The object rssFeed being created before ...
   rssFeed.item({
@@ -54,7 +54,7 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
     , date            : 'Sep 30, 2012 04:58:00 GMT'
   });
 
-* Several items can be created at once, just chaining the function:
+#### Several items can be created at once, just chaining the function:
 
     // The object rssFeed being created before ...
         rssFeed
@@ -83,7 +83,7 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
           , date            : 'Sep 26, 2011 22:40:19 GMT'
         });
 
-* Now, of course, you may need to include more fields in your RSS items
+#### Now, of course, you may need to include more fields in your RSS items
 
   // The object rssFeed being created before ...
       rssFeed
@@ -116,25 +116,25 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 ### Add Attributes to the XML RSS Header
 
-* By default, I'm including these XML RSS Headers:
+#### By default, I'm including these XML RSS Headers:
   * 'xmlns:dc'      : 'http://purl.org/dc/elements/1.1/'
   * 'xmlns:content' : 'http://purl.org/rss/1.0/modules/content/'
   * 'xmlns:atom'    : 'http://www.w3.org/2005/Atom'
 
-* Perhaps You want to include more. Use `xmlAddAttr()` this way:
+#### Perhaps You want to include more. Use `xmlAddAttr()` this way:
 
 
-  // The object rssFeed being created before ...
-  rssFeed.xmlAddAttr('myNameSpace:MyField', 'Special Value');
-  rssFeed.xmlAddAttr('myNameSpace:OtherField', 'More Specials Values');
+    // The object rssFeed being created before ...
+    rssFeed.xmlAddAttr('myNameSpace:MyField', 'Special Value');
+    rssFeed.xmlAddAttr('myNameSpace:OtherField', 'More Specials Values');
 
-* The result:
+#### The result:
 
     <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" myNameSpace:MyField="Special Value" myNameSpace:OtherField="More Specials Values" version="2.0"><channel>
 
 ### Generate XML from the RSS Feed Object
 
-* To generate your XML:
+#### To generate your XML:
 
   // The object rssFeed being created before ...
   rssFeed.xml();
@@ -143,11 +143,11 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 To run the tests use [mocha](https://github.com/visionmedia/mocha).
 
-  $ mocha
+    $ mocha
 
 Personally, I like this reporter better:
 
-  $ mocha --reporter spec
+    $ mocha --reporter spec
 
 ## License
 
