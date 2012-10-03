@@ -5,131 +5,114 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 ## Installation
 
-````bash
-$ npm install juan-rss
-````
+    $ npm install juan-rss
 
 ## Use
 
 ### Require the Module
 
-````javascript
-
-var RSS = require('juan-rss');
-````
+    var RSS = require('juan-rss');
 
 ### Create an RSS Feed Object
 
 * Just create the object:
 
-````javascript
+    var rssFeed = new RSS();
 
-var rssFeed = new RSS();
-````
 
 * You can fill the main fields here:
 
-````javascript
-// The object rssFeed being created before ...
+    // The object rssFeed being created before ...
 
-rssFeed.title         = 'My Title';
-rssFeed.description   = 'My Description';
-rssFeed.feed_url      = 'http://domain/path/to/rss.xml';
-rssFeed.site_url      = 'http://domain/path/to/';
-rssFeed.image_url     = 'http://domain/path/to/icon.png';
-rssFeed.author        = 'John Doe';
-````
+    rssFeed.title         = 'My Title';
+    rssFeed.description   = 'My Description';
+    rssFeed.feed_url      = 'http://domain/path/to/rss.xml';
+    rssFeed.site_url      = 'http://domain/path/to/';
+    rssFeed.image_url     = 'http://domain/path/to/icon.png';
+    rssFeed.author        = 'John Doe';
 
 * You can, of course, create the object and assign the fields inmediately:
 
-````javascript
-var rssFeed = new RSS({}
-  title         : 'My Title',
-  description   : 'My Description',
-  feed_url      : 'http://domain/path/to/rss.xml',
-  site_url      : 'http://domain/path/to/',
-  image_url     : 'http://domain/path/to/icon.png',
-  author        : 'John Doe'
-});
-````
+  var rssFeed = new RSS({}
+    title         : 'My Title',
+    description   : 'My Description',
+    feed_url      : 'http://domain/path/to/rss.xml',
+    site_url      : 'http://domain/path/to/',
+    image_url     : 'http://domain/path/to/icon.png',
+    author        : 'John Doe'
+  });
 
 ### Add Items to the RSS Feed Object
 
 * Create an empty Item and fill it:
 
-````javascript
-// The object rssFeed being created before ...
-rssFeed.item({
-    title           : 'item 1'
-  , description     : 'description 1'
-  , url             : 'http://domain/path/to/post-1'
-  , date            : 'Sep 30, 2012 04:58:00 GMT'
-});
-````
+  // The object rssFeed being created before ...
+  rssFeed.item({
+      title           : 'item 1'
+    , description     : 'description 1'
+    , url             : 'http://domain/path/to/post-1'
+    , date            : 'Sep 30, 2012 04:58:00 GMT'
+  });
 
 * Several items can be created at once, just chaining the function:
 
-````javascript
-// The object rssFeed being created before ...
-    rssFeed
-    .item({
-        title           : 'item 1'
-      , description     : 'description 1'
-      , url             : 'http://domain/path/to/post-1'
-      , date            : 'Feb 22, 2010 10:45:43 GMT'
-    })
-    .item({
-        title           : 'item 2'
-      , description     : 'description 2'
-      , url             : 'http://domain/path/to/post-2'
-      , date            : 'Jun 04, 2007 14:58:31 GMT'
-    })
-    .item({
-        title           : 'item 3'
-      , description     : 'description 3'
-      , url             : 'http://domain/path/to/post-3'
-      , date            : 'Jun 24, 2011 08:57:19 GMT'
-    })
-    .item({
-        title           : 'item 4'
-      , description     : 'description 4'
-      , url             : 'http://domain/path/to/post-4'
-      , date            : 'Sep 26, 2011 22:40:19 GMT'
-    });
-````
+    // The object rssFeed being created before ...
+        rssFeed
+        .item({
+            title           : 'item 1'
+          , description     : 'description 1'
+          , url             : 'http://domain/path/to/post-1'
+          , date            : 'Feb 22, 2010 10:45:43 GMT'
+        })
+        .item({
+            title           : 'item 2'
+          , description     : 'description 2'
+          , url             : 'http://domain/path/to/post-2'
+          , date            : 'Jun 04, 2007 14:58:31 GMT'
+        })
+        .item({
+            title           : 'item 3'
+          , description     : 'description 3'
+          , url             : 'http://domain/path/to/post-3'
+          , date            : 'Jun 24, 2011 08:57:19 GMT'
+        })
+        .item({
+            title           : 'item 4'
+          , description     : 'description 4'
+          , url             : 'http://domain/path/to/post-4'
+          , date            : 'Sep 26, 2011 22:40:19 GMT'
+        });
 
 * Now, of course, you may need to include more fields in your RSS items
 
-````javascript
-// The object rssFeed being created before ...
-    rssFeed
-    .item({
-        title                   : 'item 1'
-      , description             : 'description 1'
-      , url                     : 'http://domain/path/to/post-1'
-      , date                    : 'Feb 22, 2010 10:45:43 GMT'
-      , categories              : ['Food', 'Travels', 'Celebrities']
-      , 'myNamespace:myField'   : 'Some Value'
-    })
-    .item({
-        title                   : 'item 2'
-      , description             : 'description 2'
-      , url                     : 'http://domain/path/to/post-2'
-      , date                    : 'Jun 04, 2007 14:58:31 GMT'
-    })
-    .item({
-        title                   : 'item 3'
-      , description             : 'description 3'
-      , url                     : 'http://domain/path/to/post-3'
-      , date                    : 'Jun 24, 2011 08:57:19 GMT'
-      , 'myNamespace:myField'   : 'Other Value'
-    })
-    .item({
-        title                   : 'item 4'
-      , description             : 'description 4'
-      , url                     : 'http://domain/path/to/post-4'
-    });
-````
+  // The object rssFeed being created before ...
+      rssFeed
+      .item({
+          title                   : 'item 1'
+        , description             : 'description 1'
+        , url                     : 'http://domain/path/to/post-1'
+        , date                    : 'Feb 22, 2010 10:45:43 GMT'
+        , categories              : ['Food', 'Travels', 'Celebrities']
+        , 'myNamespace:myField'   : 'Some Value'
+      })
+      .item({
+          title                   : 'item 2'
+        , description             : 'description 2'
+        , url                     : 'http://domain/path/to/post-2'
+        , date                    : 'Jun 04, 2007 14:58:31 GMT'
+      })
+      .item({
+          title                   : 'item 3'
+        , description             : 'description 3'
+        , url                     : 'http://domain/path/to/post-3'
+        , date                    : 'Jun 24, 2011 08:57:19 GMT'
+        , 'myNamespace:myField'   : 'Other Value'
+      })
+      .item({
+          title                   : 'item 4'
+        , description             : 'description 4'
+        , url                     : 'http://domain/path/to/post-4'
+      });
 
 ### Add Attributes to the XML RSS Header
 
@@ -140,40 +123,31 @@ rssFeed.item({
 
 * Perhaps You want to include more. Use `xmlAddAttr()` this way:
 
-````javascript
-// The object rssFeed being created before ...
-rssFeed.xmlAddAttr('myNameSpace:MyField', 'Special Value');
-rssFeed.xmlAddAttr('myNameSpace:OtherField', 'More Specials Values');
-````
+
+  // The object rssFeed being created before ...
+  rssFeed.xmlAddAttr('myNameSpace:MyField', 'Special Value');
+  rssFeed.xmlAddAttr('myNameSpace:OtherField', 'More Specials Values');
 
 * The result:
 
-````xml
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" myNameSpace:MyField="Special Value" myNameSpace:OtherField="More Specials Values" version="2.0"><channel>
-````
+    <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" myNameSpace:MyField="Special Value" myNameSpace:OtherField="More Specials Values" version="2.0"><channel>
 
 ### Generate XML from the RSS Feed Object
 
 * To generate your XML:
 
-````javascript
-// The object rssFeed being created before ...
-rssFeed.xml();
-````
+  // The object rssFeed being created before ...
+  rssFeed.xml();
 
 ## Tests
 
 To run the tests use [mocha](https://github.com/visionmedia/mocha).
 
-````bash
-$ mocha
-````
+  $ mocha
 
 Personally, I like this reporter better:
 
-````bash
-$ mocha --reporter spec
-````
+  $ mocha --reporter spec
 
 ## License
 
