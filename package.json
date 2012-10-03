@@ -1,6 +1,6 @@
 
 { "name"                        : "juan-rss"
-, "version"                     : "0.1.0"
+, "version"                     : "0.1.1"
 , "description"                 : "RSS feed generator"
 , "homepage"                    : "http://github.com/hermanjunge/juan-rss"
 , "author"                      : "Herman Junge <haj@neosource.cl>"
