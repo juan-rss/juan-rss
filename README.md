@@ -15,12 +15,12 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 ### Create an RSS Feed Object
 
-* Just create the object:
+#### Just create the object:
 
     var rssFeed = new RSS();
 
 
-* You can fill the main fields here:
+#### You can fill the main fields here:
 
     // The object rssFeed being created before ...
 
