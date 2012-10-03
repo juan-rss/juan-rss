@@ -85,34 +85,34 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 #### Now, of course, you may need to include more fields in your RSS items
 
-  // The object rssFeed being created before ...
-      rssFeed
-      .item({
-          title                   : 'item 1'
-        , description             : 'description 1'
-        , url                     : 'http://domain/path/to/post-1'
-        , date                    : 'Feb 22, 2010 10:45:43 GMT'
-        , categories              : ['Food', 'Travels', 'Celebrities']
-        , 'myNamespace:myField'   : 'Some Value'
-      })
-      .item({
-          title                   : 'item 2'
-        , description             : 'description 2'
-        , url                     : 'http://domain/path/to/post-2'
-        , date                    : 'Jun 04, 2007 14:58:31 GMT'
-      })
-      .item({
-          title                   : 'item 3'
-        , description             : 'description 3'
-        , url                     : 'http://domain/path/to/post-3'
-        , date                    : 'Jun 24, 2011 08:57:19 GMT'
-        , 'myNamespace:myField'   : 'Other Value'
-      })
-      .item({
-          title                   : 'item 4'
-        , description             : 'description 4'
-        , url                     : 'http://domain/path/to/post-4'
-      });
+    // The object rssFeed being created before ...
+        rssFeed
+        .item({
+            title                   : 'item 1'
+          , description             : 'description 1'
+          , url                     : 'http://domain/path/to/post-1'
+          , date                    : 'Feb 22, 2010 10:45:43 GMT'
+          , categories              : ['Food', 'Travels', 'Celebrities']
+          , 'myNamespace:myField'   : 'Some Value'
+        })
+        .item({
+            title                   : 'item 2'
+          , description             : 'description 2'
+          , url                     : 'http://domain/path/to/post-2'
+          , date                    : 'Jun 04, 2007 14:58:31 GMT'
+        })
+        .item({
+            title                   : 'item 3'
+          , description             : 'description 3'
+          , url                     : 'http://domain/path/to/post-3'
+          , date                    : 'Jun 24, 2011 08:57:19 GMT'
+          , 'myNamespace:myField'   : 'Other Value'
+        })
+        .item({
+            title                   : 'item 4'
+          , description             : 'description 4'
+          , url                     : 'http://domain/path/to/post-4'
+        });
 
 ### Add Attributes to the XML RSS Header
 
