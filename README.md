@@ -35,7 +35,7 @@ Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/c
 
 #### You can, of course, create the object and assign the fields inmediately:
 
-    var rssFeed = new RSS({}
+    var rssFeed = new RSS({
       title         : 'My Title',
       description   : 'My Description',
       feed_url      : 'http://domain/path/to/rss.xml',
