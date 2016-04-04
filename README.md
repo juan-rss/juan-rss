@@ -1,8 +1,6 @@
 juan-rss
 ========
 
-![Juan](http://cl.ly/image/3f2x1K0k0M0f/Screen%20Shot%202012-10-05%20at%201.12.08%20PM.png)
-
 Fork from [dylang's node-rss version 0.0.4](https://github.com/dylang/node-rss/commit/52011922b678891ef687dfa6a96f96588ed3075c), refactored to allow more flexibility.
 
 ## Installation
